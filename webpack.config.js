@@ -29,12 +29,12 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: 'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"'
+            use: 'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"',
         }),
       },
       {
         test: /\.(jpg|png|gif)$/,
-        use: 'file-loader'
+        use: 'file-loader?name=[name].[ext]&outputPath=../assets/img/'
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)$/,
