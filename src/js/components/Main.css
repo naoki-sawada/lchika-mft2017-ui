@@ -7,7 +7,6 @@
   bottom: 0;
   width: 100%;
   /*background: url(./Main.img/BG.png) 0 0 no-repeat;*/
-  background-color: #E3314D;
   display: flex;
   flex-direction: column;
 }

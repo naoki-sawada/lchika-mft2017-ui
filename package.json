@@ -23,13 +23,13 @@
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-alpha.19",
     "react": "^15.4.2",
-    "react-css-modules": "^4.1.0",
+    "react-css-modules": "^4.6.0",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",
     "redux-actions": "^2.0.1",
     "redux-logger": "^3.0.6",
-    "redux-saga": "^0.15.3"
+    "redux-saga": "^0.15.6"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
@@ -44,6 +44,8 @@
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.1",
+    "postcss-loader": "^2.0.6",
+    "postcss-nested": "^2.1.0",
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.6.1"

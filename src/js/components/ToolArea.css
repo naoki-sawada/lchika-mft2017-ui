@@ -10,21 +10,21 @@
   display: flex;
   flex-direction: column;
   background-color: #fff;
-}
 
-.tool {
-  /*color: #fff;*/
-  margin: 20px;
-  height: 100%;
-}
+  .tool {
+    display: flex;
+    /*margin: 20px;*/
+    height: 100%;
+  }
 
-.light {
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  height: 20%;
-}
+  .light {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 20%;
 
-.row {
-  width: 100%;
+    .row {
+      width: 100%;
+    }
+  }
 }

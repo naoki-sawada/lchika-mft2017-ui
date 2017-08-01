@@ -2,6 +2,11 @@ import styles from './toolArea.css';
 import { connect } from 'react-redux';
 import Button from 'material-ui/Button';
 
+import Light from './Tools/Light';
+import Mic from './Tools/Mic';
+import Camera from './Tools/Camera';
+import Video from './Tools/Video';
+
 @connect(state => ({
   button: state.button.state,
 }))
@@ -12,29 +17,24 @@ export default class ToolArea extends React.Component {
   }
 
   render() {
-    let toolArea = null;
+    let tool = null;
     switch (this.props.button) {
       case 'light':
-        toolArea = (
-          <div styleName="light">
-            <div styleName="row">
-              <Button>A</Button>
-              <Button>B</Button>
-              <Button>C</Button>
-            </div>
-            <div styleName="row">
-              <Button>A</Button>
-              <Button>B</Button>
-              <Button>C</Button>
-            </div>
-          </div>
-        );
+        tool = <Light />;
+        break;
+      case 'mic':
+        tool = <Mic />;
+        break;
+      case 'camera':
+        tool = <Camera />;
+        break;
+      case 'video':
+        tool = <Video />;
         break;
     }
-
     return (
       <div styleName="toolArea">
-        <div styleName="tool">{toolArea}</div>
+        <div styleName="tool">{tool}</div>
       </div>
     );
   }

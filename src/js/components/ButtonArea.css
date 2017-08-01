@@ -9,8 +9,9 @@
   height: 10%;
   display: flex;
   justify-content: center;
-}
+  background-color: #E3314D;
 
-.buttonArea svg {
-  color: #fff;
+  svg {
+    color: #fff;
+  }
 }

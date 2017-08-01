@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: __dirname + '/src/js/app.js',
@@ -11,8 +11,8 @@ module.exports = {
   },
   resolve: {
     modules: [
-      path.join(__dirname, "src/js"),
-      "node_modules"
+      path.join(__dirname, 'src/js'),
+      'node_modules'
     ],
     extensions: ['.js'],
   },
@@ -22,14 +22,24 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
         }
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: 'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"',
+          fallback: 'style-loader',
+          use: [
+            'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"',
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [
+                  require('postcss-nested'),
+                ],
+              },
+            },
+          ],
         }),
       },
       {
