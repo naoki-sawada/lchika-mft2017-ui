@@ -6,9 +6,25 @@
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 10%;
-  display: flex;
-  justify-content: center;
+  /*height: 10%;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  background-color: #E3314D;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+
+  svg {
+    /*color: #fff;*/
+  }
+
+  /*.selectButton {
+    background: #fff;
+    svg {
+      color: #E3314D;
+    }
+  }*/
+}
+
+.appBar {
   background-color: #E3314D;
 
   svg {
