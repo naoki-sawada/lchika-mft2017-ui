@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Button from 'material-ui/Button';
 
 import Light from './Tools/Light';
-import Mic from './Tools/Mic';
+import Text from './Tools/Text';
 import Camera from './Tools/Camera';
 import Video from './Tools/Video';
 
@@ -22,8 +22,8 @@ export default class ToolArea extends React.Component {
       case 'light':
         tool = <Light />;
         break;
-      case 'mic':
-        tool = <Mic />;
+      case 'text':
+        tool = <Text />;
         break;
       case 'camera':
         tool = <Camera />;

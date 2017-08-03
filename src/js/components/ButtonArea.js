@@ -3,7 +3,7 @@ import { buttonState } from 'actions';
 import { withStyles, createStyleSheet } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
-import { LightbulbOutline, Mic, Camera, Videocam } from 'material-ui-icons';
+import { LightbulbOutline, Chat, Camera, Videocam } from 'material-ui-icons';
 import styles from './ButtonArea.css';
 
 const styleSheet = createStyleSheet(theme => ({
@@ -19,7 +19,7 @@ const styleSheet = createStyleSheet(theme => ({
 
 const buttonType = [
   'light',
-  'mic',
+  'text',
   'camera',
   'video',
 ];
@@ -34,12 +34,7 @@ export default class ButtonArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = { index: 0 };
-    this.onTouchEvent = this.onTouchEvent.bind(this);
     this.handleChange = this.handleChange.bind(this);
-  }
-
-  onTouchEvent(event, type) {
-    this.props.buttonState(type);
   }
 
   handleChange(event, index) {
@@ -60,7 +55,7 @@ export default class ButtonArea extends React.Component {
             indicatorColor="#fff"
           >
             <Tab label="Light" icon={<LightbulbOutline />} />
-            <Tab label="Mic or Text input" icon={<Mic />} />
+            <Tab label="Text input" icon={<Chat />} />
             <Tab label="Camera" icon={<Camera />} />
             <Tab label="Video" icon={<Videocam />} />
           </Tabs>

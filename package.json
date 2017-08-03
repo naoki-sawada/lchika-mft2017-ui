@@ -20,11 +20,13 @@
   "author": "Naoki Sawada",
   "license": "MIT",
   "dependencies": {
+    "events": "^1.1.1",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-alpha.19",
     "react": "^15.4.2",
     "react-css-modules": "^4.6.0",
     "react-dom": "^15.4.2",
+    "react-p5-wrapper": "0.0.4",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",
     "redux-actions": "^2.0.1",

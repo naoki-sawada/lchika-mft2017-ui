@@ -2,8 +2,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 
-  .row {
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+  /*.row {
     width: 100%;
     height: 50%;
 
@@ -11,5 +16,5 @@
       width: 33.3%;
       height: 100%;
     }
-  }
+  }*/
 }

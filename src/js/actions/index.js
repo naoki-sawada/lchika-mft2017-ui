@@ -1,19 +1,20 @@
 import { createAction } from 'redux-actions';
 
-export const TEST_INCREMENT = 'TEST_INCREMENT';
-export const TEST_DECREMENT = 'TEST_DECREMENT';
-export const TEST_CLEAR = 'TEST_CLEAR';
+// Video
+export const VIDEO_STATE = 'VIDEO_STATE';
+export const videoState = createAction(VIDEO_STATE);
 
-export const testIncrement = createAction(TEST_INCREMENT);
-export const testDecrement = createAction(TEST_DECREMENT);
-export const testClear = createAction(TEST_CLEAR);
+// Camera
+export const CAMERA_START = 'CAMERA_START';
+export const cameraStart = createAction(CAMERA_START);
 
-// chat
-export const CHAT_USER_TEXT = 'CHAT_USER_TEXT';
-export const CHAT_SYSTEM_TEXT = 'CHAT_SYSTEM_TEXT';
+// Camera
+export const LIGHT_RGB = 'LIGHT_RGB';
+export const lightRGB = createAction(LIGHT_RGB);
 
-export const chatUserText = createAction(CHAT_USER_TEXT);
-export const chatSystemText = createAction(CHAT_SYSTEM_TEXT);
+// Text
+// export const CAMERA_START = 'CAMERA_START';
+// export const cameraStart = createAction(CAMERA_START);
 
 // Button
 export const BUTTON_STATE = 'BUTTON_STATE';
