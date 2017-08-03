@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
+import Button from 'material-ui/Button';
 import { videoState } from 'actions';
 import styles from './Video.css';
-import Button from 'material-ui/Button';
 
 @connect(state => ({
   state: state.video.state,
