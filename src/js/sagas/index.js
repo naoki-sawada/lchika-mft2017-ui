@@ -5,6 +5,7 @@ import { lightRoot } from './light';
 import { textRoot } from './text';
 import { cameraRoot } from './camera';
 import { socketRoot } from './socket';
+import { musicRoot } from './music';
 
 export default function* rootSaga() {
   yield fork(buttonRoot);
@@ -13,4 +14,5 @@ export default function* rootSaga() {
   yield fork(textRoot);
   yield fork(cameraRoot);
   yield fork(socketRoot);
+  yield fork(musicRoot);
 }

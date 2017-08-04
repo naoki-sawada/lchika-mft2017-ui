@@ -4,7 +4,7 @@ import styles from './Text.css';
 import { sendText } from 'actions';
 
 @connect(state => ({
-  
+
 }), {
   sendText,
 })
@@ -12,12 +12,17 @@ import { sendText } from 'actions';
 export default class Text extends React.Component {
   constructor(props) {
     super(props);
+    this.onTouchEvent = this.onTouchEvent.bind(this);
+  }
+
+  onTouchEvent(arg) {
+    this.props.sendText('test');
   }
 
   render() {
     return (
       <div styleName="text">
-        text input....
+        <Button onClick={this.onTouchEvent}>text input....</Button>
       </div>
     );
   }

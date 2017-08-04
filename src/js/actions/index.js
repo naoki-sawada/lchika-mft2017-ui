@@ -12,6 +12,10 @@ export const cameraState = createAction(CAMERA_STATE);
 export const LIGHT_RGB = 'LIGHT_RGB';
 export const lightRGB = createAction(LIGHT_RGB);
 
+// Music
+export const MUSIC_CHANGE = 'MUSIC_CHANGE';
+export const musicChange = createAction(MUSIC_CHANGE);
+
 // Text
 export const SEND_TEXT = 'SEND_TEXT';
 export const sendText = createAction(SEND_TEXT);

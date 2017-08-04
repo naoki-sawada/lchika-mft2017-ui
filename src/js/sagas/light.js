@@ -2,11 +2,11 @@ import { takeLatest, throttle } from 'redux-saga';
 import { delay } from 'redux-saga';
 import { call, put, take, select, fork, cansel } from 'redux-saga/effects';
 import * as actions from 'actions';
+import { send } from './socket';
 
 function* changeLightRGB() {
-  console.log('!!!');
-  // yield delay(1000);
-  // yield put(actions.videoState('off'));
+  const rbgData = yield select(state => state.light.rgb);
+  yield fork(send, { type: 'light', options: { rbg: rbgData } });
 }
 
 export function* lightRoot() {

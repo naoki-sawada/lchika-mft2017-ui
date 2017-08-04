@@ -3,7 +3,7 @@ import { buttonState } from 'actions';
 import { withStyles, createStyleSheet } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
-import { LightbulbOutline, Chat, Camera, Videocam } from 'material-ui-icons';
+import { LightbulbOutline, Chat, MusicNote, Camera, Videocam } from 'material-ui-icons';
 import styles from './ButtonArea.css';
 
 const styleSheet = createStyleSheet(theme => ({
@@ -20,6 +20,7 @@ const styleSheet = createStyleSheet(theme => ({
 const buttonType = [
   'light',
   'text',
+  'music',
   'camera',
   'video',
 ];
@@ -56,6 +57,7 @@ export default class ButtonArea extends React.Component {
           >
             <Tab label="Light" icon={<LightbulbOutline />} />
             <Tab label="Text input" icon={<Chat />} />
+            <Tab label="Music" icon={<MusicNote />} />
             <Tab label="Camera" icon={<Camera />} />
             <Tab label="Video" icon={<Videocam />} />
           </Tabs>

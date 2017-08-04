@@ -6,6 +6,7 @@ import Light from './Tools/Light';
 import Text from './Tools/Text';
 import Camera from './Tools/Camera';
 import Video from './Tools/Video';
+import Music from './Tools/Music';
 
 @connect(state => ({
   button: state.button.state,
@@ -24,6 +25,9 @@ export default class ToolArea extends React.Component {
         break;
       case 'text':
         tool = <Text />;
+        break;
+      case 'music':
+        tool = <Music />;
         break;
       case 'camera':
         tool = <Camera />;

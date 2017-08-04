@@ -1,26 +1,26 @@
 import { connect } from 'react-redux';
 import Button from 'material-ui/Button';
-import { lightRGB } from 'actions';
-import styles from './Light.css';
+import { musicChange } from 'actions';
+import styles from './Music.css';
 
 @connect(null, {
-  lightRGB,
+  musicChange,
 })
 @CSSModules(styles)
-export default class Light extends React.Component {
+export default class Music extends React.Component {
   constructor(props) {
     super(props);
     this.onTouchEvent = this.onTouchEvent.bind(this);
   }
 
   onTouchEvent(arg) {
-    this.props.lightRGB([255, 255, 255]);
+    this.props.musicChange('xxxx.mp3');
   }
 
   render() {
     return (
-      <div styleName="light">
-        <Button onClick={this.onTouchEvent}>right</Button>
+      <div styleName="music">
+        <Button onClick={this.onTouchEvent}>Music Change</Button>
       </div>
     );
   }
