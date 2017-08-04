@@ -6,6 +6,8 @@ import shutter from './audio/Camera-Shutter03-1.mp3';
 import lchikaLogo from './image/event_logo3.gif';
 import mftLogo from './image/Tokyo-MF_logo_outlined.jpg';
 
+const countDownTime = 9;
+
 @connect(state => ({
   state: state.camera.state,
   image: state.camera.image,
@@ -16,7 +18,7 @@ import mftLogo from './image/Tokyo-MF_logo_outlined.jpg';
 export default class Camera extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { countTimer: 9 };
+    this.state = { countTimer: countDownTime };
     this.onTouchEvent = this.onTouchEvent.bind(this);
     this.countTimer = this.countTimer.bind(this);
   }
@@ -24,7 +26,7 @@ export default class Camera extends React.Component {
   countTimer() {
     const timer = setInterval(() => {
       if (this.state.countTimer <= 0) {
-        this.setState({ countTimer: 9 });
+        this.setState({ countTimer: countDownTime });
         clearInterval(timer);
         this.props.cameraState('shot');
         new Audio(shutter).play();

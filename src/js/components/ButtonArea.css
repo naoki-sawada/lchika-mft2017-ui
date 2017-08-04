@@ -1,1 +1,22 @@
-.buttonArea {}
+.buttonArea {
+  display: flex;
+  width: 100%;
+  height: 10%;
+
+  .buttonList {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    button {
+      width: 25%;
+      height: 100%;
+      background: #E3314D;
+    }
+    svg {
+      color: #fff;
+      width: 5vh;
+      height: 5vh;
+    }
+  }
+}
