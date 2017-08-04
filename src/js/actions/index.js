@@ -7,6 +7,8 @@ export const videoState = createAction(VIDEO_STATE);
 // Camera
 export const CAMERA_STATE = 'CAMERA_STATE';
 export const cameraState = createAction(CAMERA_STATE);
+export const CAMERA_IMAGE = 'CAMERA_IMAGE';
+export const cameraImage = createAction(CAMERA_IMAGE);
 
 // Light
 export const LIGHT_RGB = 'LIGHT_RGB';

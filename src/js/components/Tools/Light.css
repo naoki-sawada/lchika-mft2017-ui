@@ -1,16 +1,23 @@
 .light {
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column;*/
   width: 100%;
   height: 100%;
 
-  .row {
+  .slider {
+    align-items: center;
+    justify-content: center;
+    display: flex;
     width: 100%;
-    height: 20%;
+  }
+
+  /*.col {
+    width: 14.2857%;
+    height: 100%;
 
     button {
-      width: 14.2857%;
-      height: 100%;
+      width: 100%;
+      height: 20%;
     }
-  }
+  }*/
 }

@@ -3,9 +3,12 @@ import styles from './Camera.css';
 import Button from 'material-ui/Button';
 import { cameraState } from 'actions';
 import shutter from './audio/Camera-Shutter03-1.mp3';
+import lchikaLogo from './image/event_logo3.gif';
+import mftLogo from './image/Tokyo-MF_logo_outlined.jpg';
 
 @connect(state => ({
   state: state.camera.state,
+  image: state.camera.image,
 }), {
   cameraState,
 })
@@ -78,6 +81,19 @@ export default class Camera extends React.Component {
             </div>
           </div>
         );
+        break;
+
+      case 'fin':
+        cameraArea = (
+          <div styleName="camera">
+            <div styleName="image">
+              <img styleName="photo" src={this.props.image[0]} />
+              <img styleName="lchikaLogo" src={lchikaLogo} />
+              <img styleName="mftLogo" src={mftLogo} />
+            </div>
+          </div>
+        );
+        break;
 
       default:
         break;

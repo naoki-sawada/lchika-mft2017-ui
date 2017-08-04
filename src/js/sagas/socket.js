@@ -1,4 +1,4 @@
-import { takeLatest, eventChannel } from 'redux-saga';
+import { takeLatest, eventChannel, delay } from 'redux-saga';
 import { call, take, select, fork, put, takeEvery } from 'redux-saga/effects';
 import * as actions from 'actions';
 
@@ -9,8 +9,19 @@ export function* send(payload) {
   }
 }
 
-function* defaultMessage(payload) {
-  console.log(payload);
+function* defaultMessage(args) {
+  const { type, payload } = args;
+  switch (type) {
+    case 'camera':
+      yield put(actions.cameraState('fin'));
+      yield put(actions.cameraImage(payload));
+      yield delay(30 * 1000);
+      yield put(actions.cameraState('init'));
+      break;
+
+    default:
+      break;
+  }
 }
 
 function subscribe(socket) {
