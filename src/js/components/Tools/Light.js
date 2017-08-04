@@ -10,6 +10,7 @@ import styles from './Light.css';
 export default class Light extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { background: 'rgba(0, 0, 0, 0.8)' };
     this.onTouchEvent = this.onTouchEvent.bind(this);
   }
 
@@ -20,7 +21,51 @@ export default class Light extends React.Component {
   render() {
     return (
       <div styleName="light">
-        <Button onClick={this.onTouchEvent}>right</Button>
+        <div styleName="row">
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+        </div>
+        <div styleName="row">
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+        </div>
+        <div styleName="row">
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+        </div>
+        <div styleName="row">
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+        </div>
+        <div styleName="row">
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+          <Button onClick={this.onTouchEvent}> </Button>
+        </div>
       </div>
     );
   }

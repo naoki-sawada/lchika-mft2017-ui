@@ -35,7 +35,9 @@ module.exports = {
               loader: 'postcss-loader',
               options: {
                 plugins: () => [
+                  require('postcss-import'),
                   require('postcss-nested'),
+                  require('postcss-simple-vars'),
                 ],
               },
             },
@@ -43,7 +45,7 @@ module.exports = {
         }),
       },
       {
-        test: /\.(jpg|png|gif)$/,
+        test: /\.(jpg|png|gif|mp3)$/,
         use: 'file-loader?name=[name].[ext]&outputPath=../assets/img/'
       },
       {

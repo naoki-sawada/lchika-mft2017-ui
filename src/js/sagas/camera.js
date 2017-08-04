@@ -5,7 +5,10 @@ import * as actions from 'actions';
 import { send } from './socket';
 
 function* cameraStateWatch() {
-  yield fork(send, { type: 'camera', options: {} });
+  const state = yield select(state => state.camera.state);
+  if (state === 'shot') {
+    yield fork(send, { type: 'camera', options: {} });
+  }
 }
 
 export function* cameraRoot() {

@@ -6,7 +6,7 @@ import { send } from './socket';
 
 function* changeLightRGB() {
   const rbgData = yield select(state => state.light.rgb);
-  yield fork(send, { type: 'light', options: { rbg: rbgData } });
+  yield fork(send, { type: 'light', options: { rgb: rbgData } });
 }
 
 export function* lightRoot() {

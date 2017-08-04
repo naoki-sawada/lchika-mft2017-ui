@@ -59,7 +59,6 @@ export default class ButtonArea extends React.Component {
             <Tab label="Text input" icon={<Chat />} />
             <Tab label="Music" icon={<MusicNote />} />
             <Tab label="Camera" icon={<Camera />} />
-            <Tab label="Video" icon={<Videocam />} />
           </Tabs>
         </AppBar>
       </div>
