@@ -19,3 +19,7 @@ export const sendText = createAction(SEND_TEXT);
 // Button
 export const BUTTON_STATE = 'BUTTON_STATE';
 export const buttonState = createAction(BUTTON_STATE);
+
+// Socket
+export const SOCKET_SEND = 'SOCKET_SEND';
+export const socketSend = createAction(SOCKET_SEND);

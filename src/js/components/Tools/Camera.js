@@ -5,7 +5,9 @@ import { cameraState } from 'actions';
 
 @connect(state => ({
   state: state.camera.state,
-}))
+}), {
+  cameraState,
+})
 @CSSModules(styles)
 export default class Camera extends React.Component {
   constructor(props) {
