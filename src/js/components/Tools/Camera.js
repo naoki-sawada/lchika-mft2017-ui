@@ -35,8 +35,10 @@ export default class Camera extends React.Component {
   }
 
   onTouchEvent() {
-    this.props.cameraState('count');
-    this.countTimer();
+    setTimeout(() => {
+      this.props.cameraState('count');
+      this.countTimer();
+    }, 950);
   }
 
   render() {
@@ -45,14 +47,10 @@ export default class Camera extends React.Component {
       case 'init':
         cameraArea = (
           <div styleName="camera">
-            <div styleName="title">写真を撮影するよ！</div>
-            <div styleName="example">なにか視覚的情報を入れる</div>
-            <div styleName="buttonArea">
-              <div styleName="buttonContents">
-              <Button raised onClick={this.onTouchEvent} color="accent">
-                start
+            <div styleName="buttonOnly">
+              <Button onClick={this.onTouchEvent}>
+                take a picture!
               </Button>
-              </div>
             </div>
           </div>
         );
@@ -104,3 +102,13 @@ export default class Camera extends React.Component {
     );
   }
 }
+
+// <div styleName="title">写真を撮影するよ！</div>
+// <div styleName="example"> </div>
+// <div styleName="buttonArea">
+//   <div styleName="buttonContents">
+//     <Button raised onClick={this.onTouchEvent} color="accent">
+//       start
+//     </Button>
+//   </div>
+// </div>

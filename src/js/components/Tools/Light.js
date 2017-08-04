@@ -1,9 +1,12 @@
 import { connect } from 'react-redux';
 import Button from 'material-ui/Button';
 import hexRgb from 'hex-rgb';
-import Slider from 'react-rangeslider';
+import { CustomPicker, HuePicker, AlphaPicker } from 'react-color';
 import { lightRGB } from 'actions';
 import styles from './Light.css';
+import lightIcon from './image/IMG_4658.svg';
+
+let colorStates = null;
 
 @connect(null, {
   lightRGB,
@@ -12,13 +15,21 @@ import styles from './Light.css';
 export default class Light extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { val: 100 };
+    this.state = { color: {} };
     this.onTouchEvent = this.onTouchEvent.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.hueChangeComplete = this.hueChangeComplete.bind(this);
+    this.alphaChangeComplete = this.alphaChangeComplete.bind(this);
+    this.buttonChange = this.buttonChange.bind(this);
   }
 
-  onTouchEvent(arg) {
-    this.props.lightRGB([255, 255, 255]);
+  onTouchEvent(e, value, num) {
+    // console.log(Math.round(value[0] * num/5));
+    this.props.lightRGB([
+      Math.round(value[0] * num/5),
+      Math.round(value[1] * num/5),
+      Math.round(value[2] * num/5),
+    ]);
   }
 
   handleOnChange(value) {
@@ -27,71 +38,48 @@ export default class Light extends React.Component {
     });
   }
 
+  hueChangeComplete(color, event) {
+    colorStates = color.rgb;
+  }
+
+  alphaChangeComplete(color, event) {
+    // colorStates = colorStates ? { ...colorStates, a: a } : rgb;
+    // console.log(colorStates);
+  }
+
+  buttonChange() {
+    const { r, g, b } = colorStates;
+    this.props.lightRGB([r, g, b]);
+  }
+
   render() {
     let { val } = this.state;
     return (
       <div styleName="light">
-        <div styleName="slider">
-          <Slider
-            min={0}
-            max={255}
-            value={val}
-            // onChangeStart={this.handleChangeStart}
-            onChange={this.handleChange}
-            // onChangeComplete={this.handleChangeComplete}
+        <div styleName="icon">
+        </div>
+        <div styleName="hue">
+          <HuePicker
+            width={'80%'}
+            onChangeComplete={this.hueChangeComplete}
           />
+        </div>
+        <div styleName="setButton">
+          <Button raised color="accent" onClick={this.buttonChange}>SET</Button>
         </div>
       </div>
     );
   }
 }
 
-// <div styleName="col" style={{ background: 'linear-gradient(to bottom, #fc0964, transparent)' }}>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
+// <div styleName="icon">
+//   {lightIcon}
 // </div>
-// <div styleName="col" style={{ background: 'linear-gradient(to bottom, #ef9a35, transparent)' }}>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-// </div>
-// <div styleName="col" style={{ background: 'linear-gradient(to bottom, #eeec3b, transparent)' }}>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-// </div>
-// <div styleName="col" style={{ background: 'linear-gradient(to bottom, #52eb2e, transparent)' }}>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-// </div>
-// <div styleName="col" style={{ background: 'linear-gradient(to bottom, rgb(0, 90, 246), transparent)' }}>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-// </div>
-// <div styleName="col" style={{ background: 'linear-gradient(to bottom, #6615f9, transparent' }}>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-// </div>
-// <div styleName="col" style={{ background: 'linear-gradient(to bottom, #c42af7, transparent' }}>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
-//   <Button onClick={this.onTouchEvent}> </Button>
+
+
+// <div styleName="alpha">
+//   <AlphaPicker
+//     width={'80%'}
+//     onChangeComplete={this.alphaChangeComplete}
+//   />
 // </div>

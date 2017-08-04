@@ -22,12 +22,12 @@ export default class Music extends React.Component {
     return (
       <div styleName="music">
         <div styleName="row">
-          <Button onClick={e => this.onTouchEvent(e, conf.music[0])}>Music 1</Button>
-          <Button onClick={e => this.onTouchEvent(e, conf.music[1])}>Music 2</Button>
+          <Button style={{ color: '#65BBE4' }} onClick={e => this.onTouchEvent(e, conf.music[0])}>Music 1</Button>
+          <Button style={{ color: '#EB772C' }} onClick={e => this.onTouchEvent(e, conf.music[1])}>Music 2</Button>
         </div>
         <div styleName="row">
-          <Button onClick={e => this.onTouchEvent(e, conf.music[2])}>Music 3</Button>
-          <Button onClick={e => this.onTouchEvent(e, conf.music[3])}>Music 4</Button>
+          <Button style={{ color: '#6DBC4B' }} onClick={e => this.onTouchEvent(e, conf.music[2])}>Music 3</Button>
+          <Button style={{ color: '#AB9AC8' }} onClick={e => this.onTouchEvent(e, conf.music[3])}>Music 4</Button>
         </div>
       </div>
     );
