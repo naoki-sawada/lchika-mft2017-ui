@@ -1,4 +1,13 @@
 .main {
+  font-family: 'Noto Sans Japanese', sans-serif;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  background: whitesmoke;
+  /*background: url(./Main.img/BG.png) 0 0 no-repeat;*/
+  display: flex;
+  flex-direction: column;
 }

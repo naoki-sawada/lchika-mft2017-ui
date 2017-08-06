@@ -1,5 +1,3 @@
-### Project settings ###
-www/
 
 # Created by https://www.gitignore.io/api/macos,node
 
@@ -95,3 +93,9 @@ yarn.lock
 
 
 # End of https://www.gitignore.io/api/macos,node
+
+### Project settings ###
+www/
+src/js/conf/*.js
+!src/js/conf/default.js
+!src/js/conf/index.js

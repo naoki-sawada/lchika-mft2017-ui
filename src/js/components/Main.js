@@ -1,5 +1,6 @@
 import styles from './Main.css';
-import Test from './Test';
+import ButtonArea from './ButtonArea';
+import ToolArea from './ToolArea';
 
 @CSSModules(styles)
 export default class Main extends React.Component {
@@ -10,7 +11,8 @@ export default class Main extends React.Component {
   render() {
     return (
       <div styleName="main">
-        <Test />
+        <ButtonArea />
+        <ToolArea />
       </div>
     );
   }
